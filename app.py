@@ -238,17 +238,20 @@ def edit_job(job_id):
         return "Access Denied"
 
     if request.method == "POST":
-
+        title = request.form["title"]
         company = request.form["company"]
-        role = request.form["role"]
-        status = request.form["status"]
+        location = request.form["location"]
+        skills = request.form["skills"]
+        experience = request.form["experience"]
+        salary = request.form["salary"]
+        job_type = request.form["job_type"]
+        description = request.form["description"]
+        contact = request.form["contact"]
 
-        c.execute("""
-            UPDATE jobs
-        SET title=?, company=?, location=?, skills=?, experience=?, salary=?, job_type=?, description=?, contact=?
-        WHERE id=? AND user_id=?
+        c.execute("""UPDATE jobs
+        SET title=?, company=?, location=?, skills=?, experience=?, salary=?, job_type=?, description=?, contact=? WHERE id=? AND user_id=? """,
+        (title, company, location, skills, experience, salary, job_type, description, contact, job_id, session["user_id"]))
 
-        """, (company, role, status, job_id, session["user_id"]))
 
         conn.commit()
         conn.close()
@@ -260,9 +263,9 @@ def edit_job(job_id):
 
 
 # ---------------- RUN ---------------- #
-
+'''
 import os
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))'''
 
-#app.run(debug=True)
+app.run(debug=True)
