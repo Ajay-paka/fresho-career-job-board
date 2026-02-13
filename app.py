@@ -65,7 +65,9 @@ def recruiter_required(f):
         return f(*args, **kwargs)
     return wrapper
 
-
+@app.route('/google882a76757c4744dc.html')
+def google_verification():
+    return app.send_static_file('google882a76757c4744dc.html')
 # ---------------- LOGIN ---------------- #
 
 @app.route("/login", methods=["GET", "POST"])
