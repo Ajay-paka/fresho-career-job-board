@@ -52,12 +52,6 @@ def init_db():
     conn.close()
 
 
-init_db()
-@app.route('/google882a76757c4744dc.html')
-def google_verification():
-    return app.send_static_file('google882a76757c4744dc.html')
-
-
 # ---------------- ROLE DECORATOR ---------------- #
 
 def recruiter_required(f):
@@ -70,21 +64,21 @@ def recruiter_required(f):
 
 
 init_db()
-
-
-# ---------------- ROLE DECORATOR ---------------- #
-
-def recruiter_required(f):
-    @wraps(f)
-    def wrapper(*args, **kwargs):
-        if "user_id" not in session or session.get("role") != "recruiter":
-            return abort(403)
-        return f(*args, **kwargs)
-    return wrapper
 
 @app.route('/google069cb765d388000f.html')
 def google_verification():
     return app.send_static_file('google069cb765d388000f.html')
+# ---------------- ROLE DECORATOR ---------------- #
+
+def recruiter_required(f):
+    @wraps(f)
+    def wrapper(*args, **kwargs):
+        if "user_id" not in session or session.get("role") != "recruiter":
+            return abort(403)
+        return f(*args, **kwargs)
+    return wrapper
+
+
 # ---------------- LOGIN ---------------- #
 
 @app.route("/login", methods=["GET", "POST"])
