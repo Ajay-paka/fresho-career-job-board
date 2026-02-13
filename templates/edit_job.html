@@ -10,29 +10,23 @@
         </div>
         <div class="pad">
             <form method="POST">
-                <br><b>Job Title:</b><br>
-                <input name="title" value="{{ job[1] }}"><br>
-                <br><b>Company:</b><br>
-                <input name="company" value="{{ job[2] }}"><br>
-                <br><b>Location:</b><br>
-                <input name="location" value="{{ job[3] }}"><br>
-                <br><b>Skills:</b><br>
-                <input name="skills" value="{{ job[4] }}"><br>
-                <br><b>Experience:</b><br>
-                <input name="experience" value="{{ job[5] }}"><br>
-                <br><b>Salary:</b><br>
-                <input name="salary" value="{{ job[6] }}"><br>
-                <br><b>job_type:</b><br>
-                <input name="job_type" value="{{ job[7] }}"><br>
-                <br><b>Description:</b><br>
-                <input name="description" value="{{ job[8] }}"><br>
-                <br><b>Contact:</b><br>
-                <input name="contact" value="{{ job[9] }}"><br><br>
 
+                <input type="text" name="title" value="{{ job[1] }}" required><br>
+                <br><input type="text" name="company" value="{{ job[2] }}" required><br>
+                <br><input type="text" name="location" value="{{ job[3] }}" required><br>
+                <br><input type="text" name="skills" value="{{ job[4] }}" required><br>
+                <br><input type="text" name="experience" value="{{ job[5] }}" required><br>
+                <br><input type="text" name="salary" value="{{ job[6] }}" required><br>
+                <br><input type="text" name="job_type" value="{{ job[7] }}" required><br>
 
-                <button class="b1" type="submit">Update</button>
+                <br><textarea name="description">{{ job[8] }}</textarea><br>
+
+                <br><input type="text" name="contact" value="{{ job[9] }}" required><br>
+
+                <button type="submit">Update Job</button>
 
             </form>
+
         </div>
     </div>
 </body>
