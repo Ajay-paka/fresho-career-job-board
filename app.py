@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
+import os
 
 app = Flask(__name__)
 app.secret_key = "ajju"
@@ -263,9 +264,18 @@ def edit_job(job_id):
 
 
 # ---------------- RUN ---------------- #
+<<<<<<< HEAD
 '''
 import os
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))'''
 
 app.run(debug=True)
+=======
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
+    
+#app.run(debug=True)
+>>>>>>> d79de53065c0d37d97d1746062668e883a4ff603
