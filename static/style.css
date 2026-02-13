@@ -1,0 +1,118 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #eef1f5;
+    margin: 40px;
+}
+
+/* Center container */
+.container {
+    min-width: 800px;
+    margin: auto;
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    color: white;
+}
+
+.text {
+    padding: 10px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Card look */
+.job-card {
+    background: white;
+    padding: 15px 10px;
+    margin-top: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Inputs */
+input,
+select {
+    padding: 10px;
+    width: 75%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* Buttons */
+button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 6px;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.b1 {
+    font-size: 14px;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 6px;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #43a047;
+}
+
+/* Danger button */
+.delete-btn {
+    background: #e74c3c;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+}
+
+.pad {
+    align-items: center;
+    padding: 30px 80px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Header bar CSS */
+.top {
+    background-color: #6ab3f0;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    text-align: center;
+    width: 260px;
+    background: #2c3e50;
+    color: white;
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar img {
+    width: 150px;
+    height: auto;
+}
+
+
+/* MAIN */
+.main {
+    flex: 1;
+    background: #ecf0f1;
+    padding: 0px 10px;
+}

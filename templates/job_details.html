@@ -1,0 +1,29 @@
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<div class="top">
+    <h1>Job Details</h1>
+</div>
+<div class="pad">
+
+    <h1 style="color: #2c3e50;">{{ job[1] }}</h1>
+    <p><b>Company:</b> {{ job[2] }}</p>
+    <p><b>Location:</b> {{ job[3] }}</p>
+    <p><b>Skills:</b> {{ job[4] }}</p>
+    <p><b>Experience:</b> {{ job[5] }}</p>
+    <p><b>Salary:</b> {{ job[6] }}</p>
+    <p><b>Job Type:</b> {{ job[7] }}</p>
+
+    <hr>
+
+    <p><b>Description:</b></p>
+    <p>{{ job[8] }}</p>
+
+    <hr>
+
+    <p><b>Contact:</b> {{ job[9] }}</p>
+
+
+    <a href="/">Go Back</a>
+</div>

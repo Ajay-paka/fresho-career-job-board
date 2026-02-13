@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <div class="sidebar">
+            <!-- <h1>Fresho</h1><br> -->
+            <img src="{{ url_for('static', filename='FClogo.png') }}" width="60">
+            <h1>Let's Start Build<br>Your Career</h1>
+            <p class="tagline">As a Job seeker<br>
+                <br>or<br>
+                <br>As a Job Recruiter
+            </p>
+        </div>
+        <!-- MAIN -->
+        <div class="main">
+            <div class="top">
+                <h1 style="color: #2c3e50;">WELCOME</h1>
+            </div>
+
+            <div class="pad">
+
+
+                <form method="POST">
+
+                    <input type="text" name="username" placeholder="Username" required>
+
+                    <br><br>
+
+                    <input type="password" name="password" placeholder="Password" required>
+                    <br><br>
+                    {% if error %}
+                    <p style="color:red;">{{ error }}</p>
+                    {% endif %}
+
+                    <button class="b1" type="submit">Login</button>
+
+                </form>
+
+
+                <p>Don't have an account?</p>
+
+                <a href="/register">
+                    <button>Create Account</button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

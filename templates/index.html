@@ -1,0 +1,86 @@
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="layout">
+
+        <div class="sidebar">
+            <!-- <h1>Fresho</h1><br> -->
+            <img src="{{ url_for('static', filename='FClogo.png') }}" width="60">
+            <h1>Let's Start Build<br>Your Career</h1>
+            {% if session.get('role') == 'user' %}
+            <p class="tagline">
+                Find Genuine Fresher Jobs<br>
+                Verified Entry Level Jobs<br>
+                Made Simple
+            </p><br>
+            {% endif %}
+
+            {% if session.get('role') == 'recruiter' %}
+            <p class="tagline">
+                Create a Job opportunity<br>
+                Become a self Recruiter
+            </p>
+            <a href="/add"><button class="b1">Add Job</button></a>
+            {% endif %}<br><br>
+
+            <a href="/logout">
+                <button class="b1">Logout</button>
+            </a>
+        </div>
+
+
+
+
+        <div class="main">
+
+            <div class="top">
+                <h1>🐰 Welcome !</h1>
+                <form method="GET">
+
+                    <input type="text" name="search" placeholder="Search role"
+                        value="{{ request.args.get('search','') }}">
+                    <button class="b1" type="submit">Search</button>
+
+                </form>
+            </div>
+            <!-- Displays if no job found -->
+            <div class="text">
+                {% if jobs|length == 0 %}
+                <h3>No Jobs Found 😐</h3>
+                {% endif %}
+            </div>
+            <!-- Displays jobs in Home page -->
+            {% for job in jobs %}
+            <hr>
+            <div class="job-card">
+
+                <a href="/job/{{ job[0] }}">
+                    <h3>{{ job[1] }}</h3>
+                </a>
+
+                <p><b>Company:</b> {{ job[2] }}</p>
+                <p><b>Location:</b> {{ job[3] }}</p>
+                <p><b>Type:</b> {{ job[7] }}</p>
+                <p><b>Experience:</b> {{ job[5] }}</p>
+                <p><b> Salary:</b> {{ job[6] }}</p>
+
+                {% if session.get('role') == 'recruiter' and job[10] == session.get('user_id') %}
+                <a href="/edit/{{ job[0] }}"><button>Edit</button></a>
+
+                <a href="/delete/{{ job[0] }}" onclick="return confirm('Are you sure?');">
+                    <button class="delete-btn">Delete</button>
+                </a>
+                {% endif %}
+            </div>
+            {% endfor %}
+
+            <hr>
+        </div>
+
+
+
+
+    </div>
+</body>
