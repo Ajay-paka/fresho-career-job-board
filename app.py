@@ -95,20 +95,6 @@ def recruiter_required(f):
         return f(*args, **kwargs)
     return wrapper
 
-
-init_db()
-
-
-# ---------------- ROLE DECORATOR ---------------- #
-
-def recruiter_required(f):
-    @wraps(f)
-    def wrapper(*args, **kwargs):
-        if "user_id" not in session or session.get("role") != "recruiter":
-            return abort(403)
-        return f(*args, **kwargs)
-    return wrapper
-
 # ---------------- LOGIN ---------------- #
 
 @app.route("/login", methods=["GET", "POST"])
@@ -337,5 +323,3 @@ def edit_job(job_id):
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
-
-
