@@ -11,7 +11,7 @@ app.secret_key = os.environ.get("SECRET_KEY", "supersecret123")
 # ---------------- DATABASE CONNECTION ---------------- #
 
 def get_db():
-    return psycopg2.connect(os.environ.get("postgresql://ajju_db:ylQRVstyBV7ACzU1ovnx0APK9Owa6jkm@dpg-d67tnegboq4c73cnk1s0-a/ajay_db"))
+    return psycopg2.connect(os.environ.get("AJJU_DATABASE_URL"))
 
 
 # ---------------- INIT DATABASE ---------------- #
