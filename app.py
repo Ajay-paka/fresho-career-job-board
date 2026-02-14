@@ -61,29 +61,33 @@ def google_verification():
 @app.route("/sitemap.xml", methods=["GET"])
 def sitemap():
 
-    pages = []
-
-    # static pages
-    pages.append(url_for('home', _external=True))
-    pages.append(url_for('login', _external=True))
-    pages.append(url_for('register', _external=True))
-
     conn = get_db()
     jobs = conn.execute("SELECT id FROM jobs").fetchall()
     conn.close()
 
-    # dynamic job pages
+    urls = []
+
+    # Home page (public version)
+    urls.append("https://fresho-career.onrender.com/")
+
+    # Job detail pages
     for job in jobs:
-        pages.append(url_for('view_job', job_id=job["id"], _external=True))
+        urls.append(f"https://fresho-career.onrender.com/job/{job['id']}")
 
-    sitemap_xml = render_template("sitemap.xml", pages=pages)
+    xml = ['<?xml version="1.0" encoding="UTF-8"?>']
+    xml.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
 
-    response = app.response_class(
-        sitemap_xml,
-        mimetype='application/xml'
-    )
+    for url in urls:
+        xml.append("<url>")
+        xml.append(f"<loc>{url}</loc>")
+        xml.append("<changefreq>daily</changefreq>")
+        xml.append("<priority>0.8</priority>")
+        xml.append("</url>")
 
-    return response
+    xml.append("</urlset>")
+
+    return "\n".join(xml), 200, {'Content-Type': 'application/xml'}
+
 
 # ---------------- ROLE DECORATOR ---------------- #
 
@@ -160,8 +164,8 @@ def logout():
 
 @app.route("/")
 def home():
-    if "user_id" not in session:
-        return redirect(url_for("login"))
+    #if "user_id" not in session:
+        #return redirect(url_for("login"))
 
     search = request.args.get("search")
 
@@ -323,3 +327,4 @@ def edit_job(job_id):
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
+
