@@ -154,17 +154,16 @@ button:hover {
 
     .sidebar {
         width: 100%;
-        padding: 20px;
+        padding: 15px;
+        position: sticky;
+        top: 0;
+        background: #2c3e50;
+        z-index: 1000;
     }
 
     .main {
         width: 100%;
-        padding: 10px;
+        padding: 15px;
     }
 
-}
-
-textarea {
-    width: 100%;
-    min-height: 150px;
 }
