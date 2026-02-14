@@ -150,6 +150,7 @@ button:hover {
 
     .layout {
         flex-direction: column;
+        align-self: center;
     }
 
     .sidebar {
