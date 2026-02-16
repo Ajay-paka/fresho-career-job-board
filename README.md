@@ -37,6 +37,3 @@ git clone https://github.com/Ajay-paka/fresho-career-job-board.git
 cd fresho-career-job-board
 pip install -r requirements.txt
 python app.py
-
-
----
