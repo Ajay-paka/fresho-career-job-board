@@ -38,11 +38,5 @@ cd fresho-career-job-board
 pip install -r requirements.txt
 python app.py
 
+
 ---
-
-## 🌍 Environment Variables
-
-Create a `.env` file and add:
-
-DATABASE_URL=your_postgresql_url  
-SECRET_KEY=your_secret_key
