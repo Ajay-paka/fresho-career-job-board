@@ -12,6 +12,10 @@ app.secret_key = os.environ.get("SECRET_KEY", "supersecret123")
 
 def get_db():
     database_url = os.environ.get("DATABASE_URL")
+    
+    if not database_url:
+        raise Exception("DATABASE_URL not set")
+
     return psycopg2.connect(database_url, sslmode="require")
 
 # ---------------- INIT DATABASE ---------------- #
