@@ -11,7 +11,8 @@ app.secret_key = os.environ.get("SECRET_KEY", "supersecret123")
 # ---------------- DATABASE CONNECTION ---------------- #
 
 def get_db():
-    return psycopg2.connect(os.environ.get("DATABASE_URL"))
+    database_url = os.environ.get("DATABASE_URL")
+    return psycopg2.connect(database_url, sslmode="require")
 
 # ---------------- INIT DATABASE ---------------- #
 
