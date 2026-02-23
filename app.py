@@ -53,8 +53,6 @@ def init_db():
     cur.close()
     conn.close()
 
-init_db()
-
 
 # ---------------- GOOGLE VERIFICATION ---------------- #
 
