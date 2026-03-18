@@ -167,11 +167,7 @@ def register():
     return render_template("register.html")
 
 
-# ---------------- LOGOUT ---------------- #
-@app.route("/health")
-def health():
-    return "OK"
-    
+# ---------------- LOGOUT ---------------- #   
 @app.route("/logout")
 def logout():
     session.clear()
@@ -207,7 +203,9 @@ def home():
 
     return render_template("index.html", jobs=jobs)
 
-
+@app.route("/health")
+def health():
+    return "OK"
 # ---------------- ADD JOB ---------------- #
 
 @app.route("/add", methods=["GET", "POST"])
