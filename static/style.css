@@ -147,7 +147,6 @@ button:hover {
 
 /* MOBILE VIEW */
 @media (max-width:768px) {
-
     .layout {
         flex-direction: column;
         align-self: center;
@@ -156,15 +155,12 @@ button:hover {
     .sidebar {
         width: 100%;
         padding: 15px;
-        position: sticky;
-        top: 0;
-        background: #2c3e50;
-        z-index: 1000;
+        position: relative;
+        top: auto;
     }
 
     .main {
         width: 100%;
         padding: 15px;
     }
-
 }
