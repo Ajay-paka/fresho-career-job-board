@@ -35,7 +35,8 @@ h1 {
 }
 
 .job-card h3 {
-    font-size: 24px;
+    font-size: 18px;
+    line-height: 1.4;
     letter-spacing: 1px;
     margin-bottom: 5px;
 }
@@ -61,7 +62,7 @@ select {
 button {
     padding: 10px 14px;
     border: none;
-    border-radius: 6px;
+    border-radius: 10px;
     background: #4CAF50;
     color: white;
     cursor: pointer;
@@ -162,5 +163,33 @@ button:hover {
     .main {
         width: 100%;
         padding: 15px;
+    }
+}
+@media (max-width:768px) {
+    .job-card {
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 12px;
+    }
+}
+@media (max-width:768px) {
+    .search-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-form input,
+    .search-form button {
+        width: 100%;
+    }
+}
+@media (max-width:768px) {
+    .sidebar {
+        text-align: center;
+    }
+
+    .sidebar img {
+        margin: auto;
+        display: block;
     }
 }
