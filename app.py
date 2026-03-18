@@ -168,7 +168,10 @@ def register():
 
 
 # ---------------- LOGOUT ---------------- #
-
+@app.route("/health")
+def health():
+    return "OK"
+    
 @app.route("/logout")
 def logout():
     session.clear()
