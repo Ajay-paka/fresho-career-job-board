@@ -53,6 +53,8 @@ def init_db():
     cur.close()
     conn.close()
 
+if __name__ != "__main__":
+    init_db()
 
 # ---------------- GOOGLE VERIFICATION ---------------- #
 
