@@ -3,6 +3,8 @@ body {
     background-color: #eef1f5;
     margin: 0;
     padding: 20px;
+    overflow-x: hidden;
+
 }
 
 /* Center container */
