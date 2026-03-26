@@ -7,6 +7,7 @@ Deployed on Render with Production-Ready Architecture
 
 <p align="center">
   <a href="https://fresho-career.onrender.com/"><strong>🌐 Live Demo</strong></a>
+  ![Fresho Careers](image.png)
 </p>
 
 ---
